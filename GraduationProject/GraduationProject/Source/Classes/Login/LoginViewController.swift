@@ -20,12 +20,11 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        //self.rememberPaswordButton.setImage(UIImage.init(named: "checkbox_1"), for: .normal)
         
-        //是否自动登录
-        self.autoLogin()
-
+        self.view.backgroundColor = UIColor.white
+        
+        self.isHiddenNavigationBarShadowLine = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,29 +35,6 @@ class LoginViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    // =================================
-    // MARK:
-    // =================================
-    
-    func autoLogin() {
-        
-//        if !SessionManager.share.rememberPhone.isEmpty {
-//            self.phoneTextField.text = SessionManager.share.rememberPhone
-//        }
-//
-//        if SessionManager.share.isNeedRememberPassword {
-//
-//            self.rememberPaswordButton.setImage(UIImage.init(named: "checkbox_selected_1"), for: .normal)
-//            SessionManager.share.isNeedRememberPassword = true
-//
-//            if !SessionManager.share.rememberPassword.isEmpty {
-//                self.passwordTextField.text = SessionManager.share.rememberPassword
-//            }
-//        }
-        
-    }
-    
     
     // =================================
     // MARK:

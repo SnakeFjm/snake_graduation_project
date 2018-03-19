@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Snake_OrderSystem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="GraduationProject" customModuleProvider="target">
             <connections>
                 <outlet property="passwordTextField" destination="VdF-oM-fla" id="6ts-eA-d4x"/>
                 <outlet property="phoneTextField" destination="grT-qz-OKY" id="Yue-Lk-Xrv"/>
-                <outlet property="rememberPaswordButton" destination="yik-S8-usG" id="h46-07-gQr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-nV-4BX">
-                    <rect key="frame" x="30" y="200" width="315" height="160"/>
+                    <rect key="frame" x="30" y="200" width="315" height="115"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-wg-ef8">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
@@ -32,7 +31,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_mobile" translatesAutoresizingMaskIntoConstraints="NO" id="QNv-ou-x9w">
                                     <rect key="frame" x="15" y="11" width="28" height="28"/>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="grT-qz-OKY">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入你的账号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="grT-qz-OKY">
                                     <rect key="frame" x="58" y="15" width="247" height="20"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -92,39 +91,20 @@
                                 <constraint firstItem="mk9-yo-Rp2" firstAttribute="centerY" secondItem="F3v-IM-Kef" secondAttribute="centerY" id="n7m-3b-6Rf"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yik-S8-usG">
-                            <rect key="frame" x="0.0" y="125" width="100" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="aW9-aD-8mx"/>
-                                <constraint firstAttribute="height" constant="35" id="wC9-0g-jsz"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
-                            <state key="normal" title="记住密码" image="checkbox_1">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="checkbox_selected_1"/>
-                            <connections>
-                                <action selector="rememberPwdButtonDidTouch:" destination="-1" eventType="touchUpInside" id="qGF-mu-KME"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="F3v-IM-Kef" secondAttribute="trailing" id="12T-Jo-H7N"/>
-                        <constraint firstItem="yik-S8-usG" firstAttribute="leading" secondItem="cCT-nV-4BX" secondAttribute="leading" id="CCL-Nb-vgR"/>
                         <constraint firstItem="F3v-IM-Kef" firstAttribute="leading" secondItem="cCT-nV-4BX" secondAttribute="leading" id="GnA-s3-7Vd"/>
                         <constraint firstItem="HXP-wg-ef8" firstAttribute="top" secondItem="cCT-nV-4BX" secondAttribute="top" id="eFH-N3-h3h"/>
                         <constraint firstAttribute="trailing" secondItem="HXP-wg-ef8" secondAttribute="trailing" id="h79-ob-Wbf"/>
                         <constraint firstItem="HXP-wg-ef8" firstAttribute="leading" secondItem="cCT-nV-4BX" secondAttribute="leading" id="lSE-R9-9EX"/>
-                        <constraint firstAttribute="bottom" secondItem="yik-S8-usG" secondAttribute="bottom" id="nNl-af-mzb"/>
+                        <constraint firstAttribute="bottom" secondItem="F3v-IM-Kef" secondAttribute="bottom" id="pV8-2w-69p"/>
                         <constraint firstItem="F3v-IM-Kef" firstAttribute="top" secondItem="HXP-wg-ef8" secondAttribute="bottom" constant="15" id="qGs-sT-oD1"/>
-                        <constraint firstItem="yik-S8-usG" firstAttribute="top" secondItem="F3v-IM-Kef" secondAttribute="bottom" constant="10" id="zue-ws-T2m"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrA-qi-OfM">
-                    <rect key="frame" x="30" y="390" width="315" height="44"/>
+                    <rect key="frame" x="30" y="345" width="315" height="44"/>
                     <color key="backgroundColor" red="0.19215686269999999" green="0.60784313729999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="GMq-EJ-Qal"/>
@@ -157,8 +137,6 @@
         </view>
     </objects>
     <resources>
-        <image name="checkbox_1" width="13" height="13"/>
-        <image name="checkbox_selected_1" width="13" height="13"/>
         <image name="login_mobile" width="28" height="28"/>
         <image name="login_pw" width="28" height="28"/>
     </resources>

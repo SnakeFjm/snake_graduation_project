@@ -466,8 +466,8 @@
 		F6C215A2205F95EB008B893D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F6C215A3205F95EB008B893D /* MainViewController.xib */,
 				F6C215A4205F95EB008B893D /* MainViewController.swift */,
+				F6C215A3205F95EB008B893D /* MainViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
