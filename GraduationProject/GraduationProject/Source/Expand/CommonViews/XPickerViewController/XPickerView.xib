@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XPickerView" customModule="FoodDetect" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="aMG-pE-QR1" id="OrR-B5-QIa"/>
+                <outlet property="confirmButton" destination="DlQ-b2-32G" id="Gjs-0e-9XX"/>
+                <outlet property="pickerView" destination="zg6-Cg-dA2" id="yC7-dX-MiP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6ey-a5-BBi">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxX-eM-naF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-pE-QR1">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="feR-bl-rpb"/>
+                            </constraints>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlQ-b2-32G">
+                            <rect key="frame" x="305" y="0.0" width="70" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="awq-iX-VbV"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" red="0.19215686269999999" green="0.60784313729999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="DlQ-b2-32G" firstAttribute="top" secondItem="GxX-eM-naF" secondAttribute="top" id="8Qc-0t-wdB"/>
+                        <constraint firstItem="aMG-pE-QR1" firstAttribute="top" secondItem="GxX-eM-naF" secondAttribute="top" id="AoF-na-lgK"/>
+                        <constraint firstAttribute="bottom" secondItem="DlQ-b2-32G" secondAttribute="bottom" id="H8M-Kg-KAG"/>
+                        <constraint firstItem="aMG-pE-QR1" firstAttribute="leading" secondItem="GxX-eM-naF" secondAttribute="leading" id="bXh-KA-ta5"/>
+                        <constraint firstAttribute="bottom" secondItem="aMG-pE-QR1" secondAttribute="bottom" id="kyp-T8-VLe"/>
+                        <constraint firstAttribute="trailing" secondItem="DlQ-b2-32G" secondAttribute="trailing" id="pzm-G9-fIc"/>
+                        <constraint firstAttribute="height" constant="44" id="z3j-yz-jHu"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg6-Cg-dA2">
+                    <rect key="frame" x="0.0" y="44" width="375" height="206"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GxX-eM-naF" firstAttribute="trailing" secondItem="uhQ-Gh-Y3l" secondAttribute="trailing" id="1sI-3p-VjE"/>
+                <constraint firstItem="zg6-Cg-dA2" firstAttribute="leading" secondItem="uhQ-Gh-Y3l" secondAttribute="leading" id="4Kr-FP-zXP"/>
+                <constraint firstItem="GxX-eM-naF" firstAttribute="top" secondItem="uhQ-Gh-Y3l" secondAttribute="top" id="Ob9-3Y-g1m"/>
+                <constraint firstItem="zg6-Cg-dA2" firstAttribute="trailing" secondItem="uhQ-Gh-Y3l" secondAttribute="trailing" id="ceB-17-KEQ"/>
+                <constraint firstItem="zg6-Cg-dA2" firstAttribute="top" secondItem="GxX-eM-naF" secondAttribute="bottom" id="hT3-vh-8p6"/>
+                <constraint firstItem="zg6-Cg-dA2" firstAttribute="bottom" secondItem="uhQ-Gh-Y3l" secondAttribute="bottom" id="pko-fs-lzF"/>
+                <constraint firstItem="GxX-eM-naF" firstAttribute="leading" secondItem="uhQ-Gh-Y3l" secondAttribute="leading" id="rIy-d1-aBy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="uhQ-Gh-Y3l"/>
+            <point key="canvasLocation" x="-147" y="-381"/>
+        </view>
+    </objects>
+</document>

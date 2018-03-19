@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 初始化设置
+        self.initSettings()
+        
+        // 添加监听
+        self.addNotifications()
+        
+        //
+        self.changeRootViewController()
+        
         return true
     }
 
