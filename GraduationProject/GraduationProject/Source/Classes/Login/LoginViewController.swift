@@ -16,8 +16,6 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var rememberPaswordButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,29 +39,39 @@ class LoginViewController: BaseViewController {
     // =================================
 
     @IBAction func loginButtonDidTouch(_ sender: UIButton) {
-    
+        //
+        let apiName = URLManager.login()
+        let id = self.phoneTextField.text!
+        let password = self.passwordTextField.text!
+        let parameters: Parameters = ["id": id,
+                                    "password": password]
+        //
+        HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { [weak self] (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                let status = result["status"].stringValue
+                if status == "1" {
+                    //
+                    self?.loginSuccessfully(phoneValue: id, pwdValue: password)
+                    
+                } else {
+                    showErrorTips("账号或者密码不正确")
+                }
+            }
+        }
         
-    }
-    
-    @IBAction func rememberPwdButtonDidTouch(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
     }
     
     func loginSuccessfully(phoneValue: String, pwdValue: String) {
-        //
-//        SessionManager.share.isLogin = true
-//
-//        SessionManager.share.rememberPhone = phoneValue
-//
-//        SessionManager.share.isNeedRememberPassword = self.rememberPaswordButton.isSelected
-//
-//        if self.rememberPaswordButton.isSelected {
-//            SessionManager.share.rememberPassword = pwdValue
-//        } else {
-//            SessionManager.share.rememberPassword = ""
-//        }
-//        //
-//        NotificationCenter.default.post(name: K_LOGIN_CHECK_STATUS, object: nil, userInfo: nil)
         
+        let dict = ["id": phoneValue, "password": pwdValue]
+        if let model = UserModel(JSON: dict) {
+            //
+            UserManager.shared.saveUserModel(model: model)
+        }
+        //
+        showSuccessTips("登录成功")
+        //
+        NotificationCenter.default.post(name: K_LOGIN_STATUS_CHANGE, object: nil)
     }
+    
 }

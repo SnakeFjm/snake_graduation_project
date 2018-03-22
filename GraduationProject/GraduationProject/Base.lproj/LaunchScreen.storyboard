@@ -18,18 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timg-2" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-yO-0EV">
-                                <rect key="frame" x="37" y="233.5" width="300" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-yO-0EV">
+                                <rect key="frame" x="10" y="233.5" width="355" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="lGq-3M-xag"/>
-                                    <constraint firstAttribute="width" constant="300" id="v2y-bD-WZH"/>
+                                    <constraint firstAttribute="height" constant="200" id="9qg-Ax-5EX"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KBN-yO-0EV" secondAttribute="trailing" constant="10" id="4wU-1j-sbo"/>
                             <constraint firstItem="KBN-yO-0EV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="biM-TX-wkH"/>
                             <constraint firstItem="KBN-yO-0EV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="q1X-cn-9vQ"/>
+                            <constraint firstItem="KBN-yO-0EV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="zRV-Jn-AA1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="timg-2" width="1680" height="1457"/>
+        <image name="bg" width="214" height="104"/>
     </resources>
 </document>

@@ -27,7 +27,7 @@ class HttpManager: NSObject {
         var tempHeaders: HTTPHeaders = ["Request-Id" : UUID.init().uuidString]
         //
         if UserManager.shared.userModel != nil {
-            tempHeaders["Authorization"] = UserManager.shared.userModel.token
+//            tempHeaders["Authorization"] = UserManager.shared.userModel.token
         }
         //
         return tempHeaders

@@ -117,14 +117,16 @@ class BaseSettingManager: NSObject {
     // =================================
     
     func hostName() -> String {
-        switch type {
-        case .DEV:
-            return "http://dev.api.renbo.dingdingyisheng.mobi"
-        case .TEST:
-            return "http://jishiqi.dingdingyisheng.mobi"
-        default:
-            return "http://jishiqi.dingdingyisheng.mobi"
-        }
+        
+        return "http://www.dbmongo.tk:9999"
+//        switch type {
+//        case .DEV:
+//            return "http://dev.api.renbo.dingdingyisheng.mobi"
+//        case .TEST:
+//            return "http://jishiqi.dingdingyisheng.mobi"
+//        default:
+//            return "http://jishiqi.dingdingyisheng.mobi"
+//        }
     }
     
     //

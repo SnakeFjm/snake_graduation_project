@@ -13,7 +13,7 @@ class URLManager {
     
 
     static func apiPath(_ apiName: String, version: Int = 1) -> String {
-        var result = BaseSettingManager.shared.hostName() + "/api/v\(version)"
+        var result = BaseSettingManager.shared.hostName() 
         if apiName.hasPrefix("/") {
             result = result + apiName
         } else {
@@ -34,6 +34,14 @@ class URLManager {
             result = result + "/" + path
         }
         return result
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    static func login() -> String {
+        return apiPath("/login/student")
     }
     
     // =================================

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timg-3.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "右箭头.png",
       "scale" : "2x"
     },
     {
