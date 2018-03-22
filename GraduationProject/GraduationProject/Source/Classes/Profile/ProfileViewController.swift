@@ -12,6 +12,8 @@ class ProfileViewController: RefreshTableViewController {
 
     @IBOutlet var headerView: UIView!
     
+    var userModel: UserModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -21,7 +23,9 @@ class ProfileViewController: RefreshTableViewController {
         //
         self.navBarAddRightBarButton(image: UIImage.init(named: "profile_nav_setting")!)
         //
-        self.dataArray = ["姓名", "班级", "学院", ""]
+        self.userModel = UserManager.shared.userModel
+        //
+        self.dataArray = ["ID", "姓名", "学院", "身份"]
         // 注册tableView
         self.registerCellNib(nibName: "ProfileTableViewCell")
         //
@@ -71,12 +75,24 @@ class ProfileViewController: RefreshTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         cell.titleLabel.text = self.dataArray[indexPath.row].stringValue
+        switch indexPath.row {
+        case 0:
+            cell.contentLabel.text = self.userModel.id
+        case 1:
+            cell.contentLabel.text = self.userModel.name
+        case 2:
+            cell.contentLabel.text = self.userModel.college
+        case 3:
+            cell.contentLabel.text = self.userModel.role
+        default:
+            break
+        }
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 15
+        return 10
     }
     
     // =================================

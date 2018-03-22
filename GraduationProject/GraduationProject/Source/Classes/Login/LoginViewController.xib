@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="GraduationProject" customModuleProvider="target">
             <connections>
+                <outlet property="imageButton" destination="1B9-KX-eYd" id="UO6-GF-JlM"/>
                 <outlet property="passwordTextField" destination="VdF-oM-fla" id="6ts-eA-d4x"/>
                 <outlet property="phoneTextField" destination="grT-qz-OKY" id="Yue-Lk-Xrv"/>
+                <outlet property="roleLabel" destination="ilX-t0-9LN" id="fOx-JT-kIl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-nV-4BX">
-                    <rect key="frame" x="30" y="200" width="315" height="115"/>
+                    <rect key="frame" x="30" y="150" width="315" height="115"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-wg-ef8">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
@@ -122,21 +124,87 @@
                         <action selector="loginButtonDidTouch:" destination="-1" eventType="touchUpInside" id="8IZ-6K-zhz"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-nt-peY">
+                    <rect key="frame" x="30" y="404" width="31" height="30"/>
+                    <state key="normal" title="注册"/>
+                    <connections>
+                        <action selector="registerButtonDidTouch:" destination="-1" eventType="touchUpInside" id="se6-VG-xap"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHU-fx-meb">
+                    <rect key="frame" x="30" y="265" width="315" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilX-t0-9LN">
+                            <rect key="frame" x="106.5" y="25" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择身份:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9x-Ac-aaI">
+                            <rect key="frame" x="0.0" y="14" width="91.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY7-6T-ZTW">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
+                            <connections>
+                                <action selector="chooseRoleButtonDidTouch:" destination="-1" eventType="touchUpInside" id="Wa4-bM-fhL"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laf-27-3M0">
+                            <rect key="frame" x="0.0" y="49" width="315" height="1"/>
+                            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="s8g-dJ-qk2"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-KX-eYd">
+                            <rect key="frame" x="290" y="14" width="10" height="22"/>
+                            <state key="normal" image="group_triangle_up"/>
+                            <state key="selected" image="group_triangle"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xY7-6T-ZTW" firstAttribute="leading" secondItem="dHU-fx-meb" secondAttribute="leading" id="07p-JF-3Wv"/>
+                        <constraint firstItem="S9x-Ac-aaI" firstAttribute="leading" secondItem="dHU-fx-meb" secondAttribute="leading" id="1wJ-2C-x4b"/>
+                        <constraint firstAttribute="trailing" secondItem="xY7-6T-ZTW" secondAttribute="trailing" id="5Ly-qA-w7T"/>
+                        <constraint firstAttribute="trailing" secondItem="1B9-KX-eYd" secondAttribute="trailing" constant="15" id="A2a-fK-Hgp"/>
+                        <constraint firstItem="xY7-6T-ZTW" firstAttribute="top" secondItem="dHU-fx-meb" secondAttribute="top" id="B71-9t-3gG"/>
+                        <constraint firstAttribute="trailing" secondItem="laf-27-3M0" secondAttribute="trailing" id="BfS-6Y-z8h"/>
+                        <constraint firstAttribute="height" constant="50" id="EPr-s1-bcn"/>
+                        <constraint firstAttribute="bottom" secondItem="xY7-6T-ZTW" secondAttribute="bottom" id="FBv-2x-t4f"/>
+                        <constraint firstItem="ilX-t0-9LN" firstAttribute="centerY" secondItem="dHU-fx-meb" secondAttribute="centerY" id="Pcb-ls-B2r"/>
+                        <constraint firstItem="laf-27-3M0" firstAttribute="leading" secondItem="dHU-fx-meb" secondAttribute="leading" id="b3N-pf-kTF"/>
+                        <constraint firstAttribute="bottom" secondItem="laf-27-3M0" secondAttribute="bottom" id="dhI-fp-C3m"/>
+                        <constraint firstItem="1B9-KX-eYd" firstAttribute="centerY" secondItem="dHU-fx-meb" secondAttribute="centerY" id="iyf-b5-re7"/>
+                        <constraint firstItem="ilX-t0-9LN" firstAttribute="leading" secondItem="S9x-Ac-aaI" secondAttribute="trailing" constant="15" id="l6E-6j-Pth"/>
+                        <constraint firstItem="S9x-Ac-aaI" firstAttribute="centerY" secondItem="dHU-fx-meb" secondAttribute="centerY" id="mFR-rq-CqA"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cCT-nV-4BX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="180" id="3fs-u2-D5h"/>
+                <constraint firstItem="cCT-nV-4BX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="130" id="3fs-u2-D5h"/>
+                <constraint firstItem="dHU-fx-meb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="76a-C8-0Id"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCT-nV-4BX" secondAttribute="trailing" constant="30" id="EaU-dS-Yuh"/>
                 <constraint firstItem="zrA-qi-OfM" firstAttribute="width" secondItem="cCT-nV-4BX" secondAttribute="width" id="HeV-0h-6E4"/>
-                <constraint firstItem="zrA-qi-OfM" firstAttribute="top" secondItem="cCT-nV-4BX" secondAttribute="bottom" constant="30" id="Ifg-no-6Ib"/>
+                <constraint firstItem="zrA-qi-OfM" firstAttribute="top" secondItem="cCT-nV-4BX" secondAttribute="bottom" constant="80" id="Ifg-no-6Ib"/>
                 <constraint firstItem="zrA-qi-OfM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rfb-oe-u4z"/>
+                <constraint firstItem="ffJ-nt-peY" firstAttribute="leading" secondItem="zrA-qi-OfM" secondAttribute="leading" id="Xg8-G8-eFy"/>
+                <constraint firstItem="dHU-fx-meb" firstAttribute="top" secondItem="cCT-nV-4BX" secondAttribute="bottom" id="bxM-EZ-CDS"/>
                 <constraint firstItem="cCT-nV-4BX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="e5a-Fz-xaQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dHU-fx-meb" secondAttribute="trailing" constant="30" id="mq9-MC-eJ3"/>
+                <constraint firstItem="ffJ-nt-peY" firstAttribute="top" secondItem="zrA-qi-OfM" secondAttribute="bottom" constant="15" id="qur-KC-cxd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="39.5" y="54.5"/>
         </view>
     </objects>
     <resources>
+        <image name="group_triangle" width="16" height="10"/>
+        <image name="group_triangle_up" width="10" height="16"/>
         <image name="login_mobile" width="28" height="28"/>
         <image name="login_pw" width="28" height="28"/>
     </resources>

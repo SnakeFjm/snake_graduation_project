@@ -13,8 +13,10 @@ import SwiftyJSON
 class LoginViewController: BaseViewController {
 
     @IBOutlet weak var phoneTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var roleLabel: UILabel!
+    @IBOutlet weak var imageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,28 @@ class LoginViewController: BaseViewController {
     // =================================
     // MARK:
     // =================================
+    
+    @IBAction func chooseRoleButtonDidTouch(_ sender: Any) {
+        //
+        let titleArray = ["学生", "老师"]
+        showActionSheet(title: "请选择身份", otherTitles: titleArray) { (_, index) in
+            if index == 0 {
+                return
+            }
+            self.roleLabel.text = titleArray[index-1]
+        }
+    }
+    
+    @IBAction func registerButtonDidTouch(_ sender: Any) {
+        //
+        self.push(RegisterViewController())
+    }
 
     @IBAction func loginButtonDidTouch(_ sender: UIButton) {
+        //
+        if (self.roleLabel.text?.isEmpty)! {
+            return
+        }
         //
         let apiName = URLManager.login()
         let id = self.phoneTextField.text!
@@ -51,7 +73,7 @@ class LoginViewController: BaseViewController {
                 let status = result["status"].stringValue
                 if status == "1" {
                     //
-                    self?.loginSuccessfully(phoneValue: id, pwdValue: password)
+                    self?.loginSuccessfully()
                     
                 } else {
                     showErrorTips("账号或者密码不正确")
@@ -61,9 +83,13 @@ class LoginViewController: BaseViewController {
         
     }
     
-    func loginSuccessfully(phoneValue: String, pwdValue: String) {
-        
-        let dict = ["id": phoneValue, "password": pwdValue]
+    func loginSuccessfully() {
+        //
+        let id = self.phoneTextField.text!
+        let password = self.passwordTextField.text!
+        let role = self.roleLabel.text!
+        //
+        let dict = ["id": id, "password": password, "role": role]
         if let model = UserModel(JSON: dict) {
             //
             UserManager.shared.saveUserModel(model: model)

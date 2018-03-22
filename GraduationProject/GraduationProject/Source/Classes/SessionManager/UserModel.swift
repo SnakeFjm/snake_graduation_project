@@ -16,6 +16,8 @@ class UserModel: Mappable {
     
     var id: String = ""
     var password: String = ""
+    var name: String = ""
+    var college: String = ""
     var role: String = ""
 
     required init?(map: Map) {
@@ -26,6 +28,9 @@ class UserModel: Mappable {
         //
         id <- map["id"]
         password <- map["password"]
+        name <- map["name"]
+        college <- map["college"]
+        role <- map["role"]
     }
     
 }

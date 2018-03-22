@@ -49,7 +49,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-qy-L2F">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonmember_male_2" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-qy-L2F">
                             <rect key="frame" x="147" y="20" width="80" height="80"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -101,6 +101,7 @@
         </view>
     </objects>
     <resources>
+        <image name="nonmember_male_2" width="80" height="80"/>
         <image name="profile_icon_vip" width="42" height="42"/>
     </resources>
 </document>
