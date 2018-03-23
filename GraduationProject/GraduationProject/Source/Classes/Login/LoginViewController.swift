@@ -62,7 +62,7 @@ class LoginViewController: BaseViewController {
             return
         }
         //
-        let apiName = URLManager.login()
+        let apiName = (self.roleLabel.text! == "学生") ? URLManager.login_student() : URLManager.login_teacher()
         let id = self.phoneTextField.text!
         let password = self.passwordTextField.text!
         let parameters: Parameters = ["id": id,
@@ -75,8 +75,10 @@ class LoginViewController: BaseViewController {
                     //
                     self?.loginSuccessfully()
                     
-                } else {
-                    showErrorTips("账号或者密码不正确")
+                } else if status == "0" {
+                    showErrorTips("密码不正确")
+                } else if status == "-1" {
+                    showErrorTips("账号不存在")
                 }
             }
         }

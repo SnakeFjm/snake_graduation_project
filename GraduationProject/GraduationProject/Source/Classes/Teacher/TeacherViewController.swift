@@ -12,8 +12,10 @@ class TeacherViewController: RefreshTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //
+        self.title = "我的班级"
+        //
+        self.navBarAddRightBarButton(title: "创建班级")
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +23,21 @@ class TeacherViewController: RefreshTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func loadDataFromServer() {
+        
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func navBarRightBarButtonDidTouch(_ sender: Any) {
+        
+    }
     
 
 }
