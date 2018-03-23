@@ -74,7 +74,6 @@ class LoginViewController: BaseViewController {
                 if status == "1" {
                     //
                     self?.loginSuccessfully()
-                    
                 } else if status == "0" {
                     showErrorTips("密码不正确")
                 } else if status == "-1" {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TeacherViewController: RefreshTableViewController {
 
@@ -16,6 +18,10 @@ class TeacherViewController: RefreshTableViewController {
         self.title = "我的班级"
         //
         self.navBarAddRightBarButton(title: "创建班级")
+        //
+        self.registerCellNib(nibName: "CourseTableViewCell")
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +34,14 @@ class TeacherViewController: RefreshTableViewController {
     // =================================
     
     override func loadDataFromServer() {
-        
+        //
+        let apiName = ""
+        HttpManager.shared.getRequest(apiName).responseJSON { [weak self] (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                //
+                self?.reloadTableViewData()
+            }
+        }
     }
     
     // =================================
@@ -36,7 +49,7 @@ class TeacherViewController: RefreshTableViewController {
     // =================================
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        
+        self.push(AddTeacherCourseViewController())
     }
     
 

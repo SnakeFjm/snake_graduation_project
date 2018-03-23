@@ -1,5 +1,5 @@
 //
-//  TeacherExamViewController.swift
+//  AddTeacherCourseViewController.swift
 //  GraduationProject
 //
 //  Created by Snake on 2018/3/23.
@@ -8,24 +8,23 @@
 
 import UIKit
 
-class TeacherExamViewController: BaseViewController {
+class AddTeacherCourseViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        self.title = "测验"
-        self.isHiddenNavigationBarShadowLine = true
+        self.title = "添加班级"
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // =================================
     // MARK:
     // =================================
     
-    
-    
+
 }

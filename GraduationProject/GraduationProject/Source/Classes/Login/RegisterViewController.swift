@@ -78,7 +78,7 @@ class RegisterViewController: BaseViewController {
     
     func register(code: String) {
         //
-        let apiName = (code == "") ? "" : ""
+        let apiName = (code == "") ? URLManager.register_student() : URLManager.register_teacher()
         
         let id = self.idTextField.text!
         let name = self.nameTextField.text!
@@ -93,10 +93,15 @@ class RegisterViewController: BaseViewController {
         }
         //
         HttpManager.shared.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { [weak self] (response) in
-            if let _ = HttpManager.parseDataResponse(response) {
+            if let result = HttpManager.parseDataResponse(response) {
                 //
-                showSuccessTips("注册成功")
-                self?.back()
+                let status = result["status"].stringValue
+                if status == "1" {
+                    showSuccessTips("注册成功")
+                    self?.back()
+                } else if status == "-1" {
+                    showErrorTips("账号已存在")
+                }
             }
         }
     }

@@ -28,7 +28,13 @@ class StudentViewController: RefreshTableViewController {
     // =================================
     
     override func loadDataFromServer() {
-        
+        //
+        let apiName = ""
+        HttpManager.shared.getRequest(apiName).responseJSON { [weak self] (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                
+            }
+        }
     }
     
     // =================================
@@ -36,7 +42,7 @@ class StudentViewController: RefreshTableViewController {
     // =================================
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        
+        self.push(SignInViewController())
     }
 
 }

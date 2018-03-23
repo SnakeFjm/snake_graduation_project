@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseTableViewCell" rowHeight="75" id="KGk-i7-Jjw" customClass="CourseTableViewCell" customModule="GraduationProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="334" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-uc-JlG">
+                        <rect key="frame" x="0.0" y="0.0" width="334" height="74.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi6-t3-TWM">
+                                <rect key="frame" x="15" y="15" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlM-e5-wwK">
+                                <rect key="frame" x="76" y="15" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学年：2018-3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-HH-Fgf">
+                                <rect key="frame" x="210" y="15" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上课时间：Mon-1-2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnh-9T-wxJ">
+                                <rect key="frame" x="15" y="41" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地点：A302" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU9-wM-6nA">
+                                <rect key="frame" x="225" y="41" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sU9-wM-6nA" secondAttribute="trailing" constant="15" id="5Te-jN-gRv"/>
+                            <constraint firstItem="Pi6-t3-TWM" firstAttribute="top" secondItem="JrO-uc-JlG" secondAttribute="top" constant="15" id="HJT-Q2-ywL"/>
+                            <constraint firstItem="XlM-e5-wwK" firstAttribute="leading" secondItem="Pi6-t3-TWM" secondAttribute="trailing" constant="10" id="HhC-Sm-cl8"/>
+                            <constraint firstItem="Hnh-9T-wxJ" firstAttribute="leading" secondItem="JrO-uc-JlG" secondAttribute="leading" constant="15" id="RVR-hM-TtC"/>
+                            <constraint firstItem="XlM-e5-wwK" firstAttribute="top" secondItem="JrO-uc-JlG" secondAttribute="top" constant="15" id="TWS-OH-t80"/>
+                            <constraint firstItem="sU9-wM-6nA" firstAttribute="top" secondItem="fxB-HH-Fgf" secondAttribute="bottom" constant="5" id="U3J-aY-IV7"/>
+                            <constraint firstAttribute="trailing" secondItem="fxB-HH-Fgf" secondAttribute="trailing" constant="15" id="WiI-9N-o1B"/>
+                            <constraint firstItem="Pi6-t3-TWM" firstAttribute="leading" secondItem="JrO-uc-JlG" secondAttribute="leading" constant="15" id="Xr5-Bd-WSD"/>
+                            <constraint firstItem="fxB-HH-Fgf" firstAttribute="top" secondItem="JrO-uc-JlG" secondAttribute="top" constant="15" id="Z5A-Lq-cPJ"/>
+                            <constraint firstItem="Hnh-9T-wxJ" firstAttribute="top" secondItem="Pi6-t3-TWM" secondAttribute="bottom" constant="5" id="pOY-9s-lvk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="JrO-uc-JlG" secondAttribute="bottom" id="GiA-qc-YkT"/>
+                    <constraint firstAttribute="trailing" secondItem="JrO-uc-JlG" secondAttribute="trailing" id="KKT-7Y-Ilv"/>
+                    <constraint firstItem="JrO-uc-JlG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qSK-qG-Yan"/>
+                    <constraint firstItem="JrO-uc-JlG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qpW-Uy-BRR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="classroomLabel" destination="sU9-wM-6nA" id="pnC-V8-PnA"/>
+                <outlet property="courseYearLabel" destination="fxB-HH-Fgf" id="LE0-tM-EQG"/>
+                <outlet property="idLabel" destination="Pi6-t3-TWM" id="P4I-3Z-mHF"/>
+                <outlet property="nameLabel" destination="XlM-e5-wwK" id="5kw-GQ-rSf"/>
+                <outlet property="timeLabel" destination="Hnh-9T-wxJ" id="g7P-Iq-fUy"/>
+            </connections>
+            <point key="canvasLocation" x="11" y="63.5"/>
+        </tableViewCell>
+    </objects>
+</document>
