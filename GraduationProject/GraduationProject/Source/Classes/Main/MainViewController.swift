@@ -11,10 +11,15 @@ import QMUIKit
 
 class MainViewController: UITabBarController {
     
-    var studentNav: QMUINavigationController!
-    var teacherNav: QMUINavigationController!
-    var examNav: QMUINavigationController!
-    var profileNav: QMUINavigationController!
+    var homeNavController: UINavigationController!
+    var studentVC: StudentViewController!
+    var teacherVC: TeacherViewController!
+    
+    var examNavController: UINavigationController!
+    var studentExamVC: StudentExamViewController!
+    var teacherExamVC: TeacherExamViewController!
+    
+    var profileNav: UINavigationController!
     
 
     override func viewDidLoad() {
@@ -37,24 +42,30 @@ class MainViewController: UITabBarController {
     func initSubViewControllers(role: String) {
         //
         if role == "学生" {
-            
+            self.studentVC = StudentViewController()
+            self.studentVC.hidesBottomBarWhenPushed = false
+            //
+            self.studentExamVC = StudentExamViewController()
+            self.studentExamVC.hidesBottomBarWhenPushed = false
+        } else if role == "教师" {
+            self.teacherVC = TeacherViewController()
+            self.teacherVC.hidesBottomBarWhenPushed = false
+            //
+            self.teacherExamVC = TeacherExamViewController()
+            self.teacherExamVC.hidesBottomBarWhenPushed = false
         }
-        let studentVC = StudentViewController()
-        studentVC.hidesBottomBarWhenPushed = false
-        self.studentNav = QMUINavigationController.init(rootViewController: studentVC)
-        let studentItem = UITabBarItem.init(title: "签到", image: UIImage(named: "signIn"), selectedImage: UIImage(named: "signIn_selected"))
-        studentItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)
-        studentItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBMake(r: 0x1B, g: 0x9D, b: 0xE3)], for: .selected)
-        self.studentNav.tabBarItem = studentItem
+        self.homeNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentVC :self.teacherVC)
+        let homeItem = UITabBarItem.init(title: "签到", image: UIImage(named: "signIn"), selectedImage: UIImage(named: "signIn_selected"))
+        homeItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)
+        homeItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBMake(r: 0x1B, g: 0x9D, b: 0xE3)], for: .selected)
+        self.homeNavController.tabBarItem = homeItem
 
         //
-        let examVC = ExamViewController()
-        examVC.hidesBottomBarWhenPushed = false
-        self.examNav = QMUINavigationController.init(rootViewController: examVC)
+        self.examNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentExamVC :self.teacherExamVC)
         let examItem = UITabBarItem.init(title: "测验", image: UIImage(named: "exam"), selectedImage: UIImage(named: "exam_selected"))
         examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)
         examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBMake(r: 0x1B, g: 0x9D, b: 0xE3)], for: .selected)
-        self.examNav.tabBarItem = examItem
+        self.examNavController.tabBarItem = examItem
 
         //
         let profileVC = ProfileViewController()
@@ -66,7 +77,7 @@ class MainViewController: UITabBarController {
         profileNav.tabBarItem = profileItem
 
         //
-        self.viewControllers = [studentNav, examNav, profileNav]
+        self.viewControllers = [homeNavController, examNavController, profileNav]
     }
 
 
