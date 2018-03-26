@@ -48,6 +48,16 @@ class TeacherViewController: RefreshTableViewController {
     // MARK:
     // =================================
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CourseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell", for: indexPath) as! CourseTableViewCell
+        
+        return cell
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
         self.push(AddTeacherCourseViewController())
     }

@@ -47,7 +47,7 @@ class MainViewController: UITabBarController {
             //
             self.studentExamVC = StudentExamViewController()
             self.studentExamVC.hidesBottomBarWhenPushed = false
-        } else if role == "教师" {
+        } else {    // if role == "教师"
             self.teacherVC = TeacherViewController()
             self.teacherVC.hidesBottomBarWhenPushed = false
             //

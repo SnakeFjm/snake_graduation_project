@@ -37,9 +37,9 @@ class ProfileViewController: RefreshTableViewController {
         self.tableView.tableHeaderView = self.headerView
         self.tableView.tableFooterView = UIView.init()
         
+        self.loadDataFromServer()
+        
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,6 +66,14 @@ class ProfileViewController: RefreshTableViewController {
         let image = UIImage.qmui_image(with: UIColor.init(red: 46/255, green: 46/255, blue: 46/255, alpha: 1), size: CGSize(width: ScreenWidth, height: NavigationBarHeight), cornerRadius: 0)
         self.navigationController?.navigationBar.setBackgroundImage(image, for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func loadDataFromServer() {
+        
     }
     
     // =================================
