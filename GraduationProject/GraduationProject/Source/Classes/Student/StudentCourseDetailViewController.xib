@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentCourseDetailViewController" customModule="GraduationProject" customModuleProvider="target">
+            <connections>
+                <outlet property="footerView" destination="2Mt-ih-vfH" id="oGo-pK-0v2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <view contentMode="scaleToFill" id="2Mt-ih-vfH">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-7d-y4z">
+                    <rect key="frame" x="15" y="20" width="157.5" height="60"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                    <state key="normal" title="查看签到情况">
+                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="SignInButtonDidTouch:" destination="-1" eventType="touchUpInside" id="vj0-ot-uiX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRj-Mh-3go">
+                    <rect key="frame" x="202.5" y="20" width="157.5" height="60"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="课堂测验">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="classTestButtonDidTouch:" destination="-1" eventType="touchUpInside" id="YZh-4R-lPU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jUC-7d-y4z" firstAttribute="leading" secondItem="Vsk-ff-Gej" secondAttribute="leading" constant="15" id="17y-m0-u1u"/>
+                <constraint firstItem="Vsk-ff-Gej" firstAttribute="trailing" secondItem="FRj-Mh-3go" secondAttribute="trailing" constant="15" id="4qO-2c-c91"/>
+                <constraint firstItem="Vsk-ff-Gej" firstAttribute="bottom" secondItem="jUC-7d-y4z" secondAttribute="bottom" constant="20" id="9dU-w9-wbk"/>
+                <constraint firstItem="FRj-Mh-3go" firstAttribute="width" secondItem="jUC-7d-y4z" secondAttribute="width" id="9zB-ZZ-VZe"/>
+                <constraint firstItem="FRj-Mh-3go" firstAttribute="leading" secondItem="jUC-7d-y4z" secondAttribute="trailing" constant="30" id="QKR-gc-qSM"/>
+                <constraint firstItem="jUC-7d-y4z" firstAttribute="top" secondItem="Vsk-ff-Gej" secondAttribute="top" constant="20" id="dk1-zJ-nxv"/>
+                <constraint firstItem="Vsk-ff-Gej" firstAttribute="bottom" secondItem="FRj-Mh-3go" secondAttribute="bottom" constant="20" id="hOw-kq-9a2"/>
+                <constraint firstItem="FRj-Mh-3go" firstAttribute="top" secondItem="Vsk-ff-Gej" secondAttribute="top" constant="20" id="mvk-I4-m6B"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Vsk-ff-Gej"/>
+            <point key="canvasLocation" x="-387" y="-194"/>
+        </view>
+    </objects>
+</document>

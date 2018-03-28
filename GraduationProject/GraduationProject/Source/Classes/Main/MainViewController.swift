@@ -54,6 +54,7 @@ class MainViewController: UITabBarController {
             self.teacherExamVC = TeacherExamViewController()
             self.teacherExamVC.hidesBottomBarWhenPushed = false
         }
+        //
         self.homeNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentVC :self.teacherVC)
         let homeItem = UITabBarItem.init(title: "签到", image: UIImage(named: "signIn"), selectedImage: UIImage(named: "signIn_selected"))
         homeItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)

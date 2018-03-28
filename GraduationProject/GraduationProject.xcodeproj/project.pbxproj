@@ -52,6 +52,8 @@
 		F61D0591206B6F2D00C64859 /* TeacherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D0590206B6F2D00C64859 /* TeacherModel.swift */; };
 		F61D0594206B743700C64859 /* StudentSignInDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D0592206B743700C64859 /* StudentSignInDetailTableViewCell.swift */; };
 		F61D0595206B743700C64859 /* StudentSignInDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61D0593206B743700C64859 /* StudentSignInDetailTableViewCell.xib */; };
+		F61D0598206B773500C64859 /* StudentCourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D0596206B773500C64859 /* StudentCourseDetailViewController.swift */; };
+		F61D0599206B773500C64859 /* StudentCourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61D0597206B773500C64859 /* StudentCourseDetailViewController.xib */; };
 		F62D914C2068C5F500510543 /* StudentAddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D914A2068C5F500510543 /* StudentAddClassViewController.swift */; };
 		F62D914D2068C5F500510543 /* StudentAddClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62D914B2068C5F500510543 /* StudentAddClassViewController.xib */; };
 		F656C5032068A0BB0008B6D8 /* StudentCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F656C5012068A0BB0008B6D8 /* StudentCourseTableViewCell.swift */; };
@@ -174,6 +176,8 @@
 		F61D0590206B6F2D00C64859 /* TeacherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherModel.swift; sourceTree = "<group>"; };
 		F61D0592206B743700C64859 /* StudentSignInDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignInDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F61D0593206B743700C64859 /* StudentSignInDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentSignInDetailTableViewCell.xib; sourceTree = "<group>"; };
+		F61D0596206B773500C64859 /* StudentCourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseDetailViewController.swift; sourceTree = "<group>"; };
+		F61D0597206B773500C64859 /* StudentCourseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCourseDetailViewController.xib; sourceTree = "<group>"; };
 		F62D914A2068C5F500510543 /* StudentAddClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAddClassViewController.swift; sourceTree = "<group>"; };
 		F62D914B2068C5F500510543 /* StudentAddClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentAddClassViewController.xib; sourceTree = "<group>"; };
 		F656C5012068A0BB0008B6D8 /* StudentCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -313,6 +317,8 @@
 				F656C5002068A09C0008B6D8 /* component */,
 				F61CA6CD2063B4E4005003F5 /* StudentViewController.swift */,
 				F61CA6CE2063B4E4005003F5 /* StudentViewController.xib */,
+				F61D0596206B773500C64859 /* StudentCourseDetailViewController.swift */,
+				F61D0597206B773500C64859 /* StudentCourseDetailViewController.xib */,
 				F62D914A2068C5F500510543 /* StudentAddClassViewController.swift */,
 				F62D914B2068C5F500510543 /* StudentAddClassViewController.xib */,
 				F617AE392063558B00256236 /* SignInViewController.swift */,
@@ -764,6 +770,7 @@
 				F617AE4620635E0300256236 /* Guide.xcassets in Resources */,
 				F61CA6E12064B02A005003F5 /* AddTeacherCourseViewController.xib in Resources */,
 				F6C21564205F8FFD008B893D /* XPickerView.xib in Resources */,
+				F61D0599206B773500C64859 /* StudentCourseDetailViewController.xib in Resources */,
 				F61D0595206B743700C64859 /* StudentSignInDetailTableViewCell.xib in Resources */,
 				F617AE382063557F00256236 /* ProfileViewController.xib in Resources */,
 				F61CA6CC2063B4D1005003F5 /* TeacherViewController.xib in Resources */,
@@ -889,6 +896,7 @@
 				F656C5032068A0BB0008B6D8 /* StudentCourseTableViewCell.swift in Sources */,
 				F6C21576205F8FFD008B893D /* SelectedTableViewCell.swift in Sources */,
 				F61CA6D820649ABF005003F5 /* StudentExamViewController.swift in Sources */,
+				F61D0598206B773500C64859 /* StudentCourseDetailViewController.swift in Sources */,
 				F61CA6C620638AE1005003F5 /* RegisterViewController.swift in Sources */,
 				F61D0582206B445400C64859 /* StudentSignInSituationTableViewCell.swift in Sources */,
 				F6C2155D205F8FFD008B893D /* UIImageExtension.swift in Sources */,

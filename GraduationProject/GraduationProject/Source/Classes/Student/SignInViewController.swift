@@ -12,7 +12,7 @@ class SignInViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
+        // 
         self.title = "签到"
         self.isHiddenNavigationBarShadowLine = true
     }
