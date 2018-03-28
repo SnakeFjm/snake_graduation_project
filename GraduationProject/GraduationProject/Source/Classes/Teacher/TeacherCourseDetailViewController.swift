@@ -11,22 +11,20 @@ import SwiftyJSON
 import Alamofire
 
 class TeacherCourseDetailViewController: RefreshTableViewController {
-
-    @IBOutlet var headerView: UIView!
-    @IBOutlet weak var courseSegmented: UISegmentedControl!
+    
+    @IBOutlet var footerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        self.courseSegmented.selectedSegmentIndex = 0
-        self.courseSegmented.addTarget(self, action: #selector(segmentedControChanged), for: UIControlEvents.valueChanged)
-        //
         self.title = "班级详情"
-        self.registerCellNib(nibName: "")
+        //
+        self.dataArray = ["课程ID", "课程名字", "学年", "上课时间", "地点"]
+        //
+        self.registerCellNib(nibName: "SingleTableViewCell")
         self.tableView.separatorStyle = .singleLine
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.tableHeaderView = self.headerView
-        self.tableView.tableFooterView = UIView()
+        self.tableView.tableFooterView = self.footerView
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,37 +32,33 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //
-        self.loadDataFromServer()
-    }
-
     // =================================
     // MARK:
     // =================================
     
-    override func loadDataFromServer() {
-        //
-        let apiName = ""
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: SingleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SingleTableViewCell", for: indexPath) as! SingleTableViewCell
         
+        cell.titleLabel.text = self.dataArray[indexPath.row].stringValue
+        cell.contentLabel.text = ""
+        
+        return cell
     }
     
     // =================================
     // MARK:
     // =================================
     
-    @objc func segmentedControChanged() {
-        switch self.courseSegmented.selectedSegmentIndex {
-        case 0:
-            break
-        case 1:
-            break
-        case 2:
-            break
-        default:
-            break
-        }
+    @IBAction func checkSignInSituationButtonDidTouch(_ sender: Any) {
+        //
+        self.push(StudentSignInDetailViewController())
     }
+    
+    @IBAction func classTestButtonDidTouch(_ sender: Any) {
+        //
+        self.navigationController?.popToRootViewController(animated: false)
+        self.tabBarController?.selectedIndex = 1
+    }
+    
 
 }

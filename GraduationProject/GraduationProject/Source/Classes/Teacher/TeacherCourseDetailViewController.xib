@@ -12,8 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherCourseDetailViewController" customModule="GraduationProject" customModuleProvider="target">
             <connections>
-                <outlet property="courseSegmented" destination="cV0-D3-edE" id="pjg-bC-C5R"/>
-                <outlet property="headerView" destination="guK-y8-7IR" id="ezg-i4-2Vr"/>
+                <outlet property="footerView" destination="dcU-eF-PWe" id="PTJ-5i-YRj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,6 +46,45 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="zRw-Bk-pEb"/>
             <point key="canvasLocation" x="-395" y="-206"/>
+        </view>
+        <view contentMode="scaleToFill" id="dcU-eF-PWe">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF9-6b-K8w">
+                    <rect key="frame" x="15" y="0.0" width="172.5" height="100"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                    <state key="normal" title="查看签到情况">
+                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="checkSignInSituationButtonDidTouch:" destination="-1" eventType="touchUpInside" id="yi4-Jj-7wW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO2-l5-wNl">
+                    <rect key="frame" x="187.5" y="0.0" width="172.5" height="100"/>
+                    <state key="normal" title="课堂测验">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="classTestButtonDidTouch:" destination="-1" eventType="touchUpInside" id="TJF-yI-iTY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BO2-l5-wNl" firstAttribute="width" secondItem="OF9-6b-K8w" secondAttribute="width" id="6lc-9P-JoO"/>
+                <constraint firstItem="dkR-mV-aAn" firstAttribute="bottom" secondItem="BO2-l5-wNl" secondAttribute="bottom" id="Cfp-vx-RKM"/>
+                <constraint firstItem="BO2-l5-wNl" firstAttribute="top" secondItem="dkR-mV-aAn" secondAttribute="top" id="DPl-ry-5hS"/>
+                <constraint firstItem="dkR-mV-aAn" firstAttribute="bottom" secondItem="OF9-6b-K8w" secondAttribute="bottom" id="EKl-sa-6qC"/>
+                <constraint firstItem="OF9-6b-K8w" firstAttribute="top" secondItem="dkR-mV-aAn" secondAttribute="top" id="Lnt-XE-9wA"/>
+                <constraint firstItem="OF9-6b-K8w" firstAttribute="leading" secondItem="dkR-mV-aAn" secondAttribute="leading" constant="15" id="XAt-3f-CeK"/>
+                <constraint firstItem="dkR-mV-aAn" firstAttribute="trailing" secondItem="BO2-l5-wNl" secondAttribute="trailing" constant="15" id="cHk-vV-K4U"/>
+                <constraint firstItem="BO2-l5-wNl" firstAttribute="leading" secondItem="OF9-6b-K8w" secondAttribute="trailing" id="z11-Zo-qm5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="dkR-mV-aAn"/>
+            <point key="canvasLocation" x="-396" y="-24"/>
         </view>
     </objects>
 </document>

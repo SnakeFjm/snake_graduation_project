@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class TeacherViewController: RefreshTableViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -52,6 +54,11 @@ class TeacherViewController: RefreshTableViewController {
         let cell: CourseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell", for: indexPath) as! CourseTableViewCell
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+        self.push(TeacherCourseDetailViewController())
     }
     
     // =================================
