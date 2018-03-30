@@ -11,8 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class TeacherViewController: RefreshTableViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +22,18 @@ class TeacherViewController: RefreshTableViewController {
         self.registerCellNib(nibName: "CourseTableViewCell")
         self.tableView.separatorStyle = .singleLine
         self.tableView.tableFooterView = UIView()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //
+        self.loadDataFromServer()
     }
     
     // =================================
@@ -37,8 +42,11 @@ class TeacherViewController: RefreshTableViewController {
     
     override func loadDataFromServer() {
         //
-        let apiName = ""
-        HttpManager.shared.getRequest(apiName).responseJSON { [weak self] (response) in
+        let apiName = URLManager.teacher_course()
+        let teacherId = UserManager.shared.userModel.id
+        let parameters: Parameters = ["teacher_id": teacherId]
+        //
+        HttpManager.shared.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { [weak self] (response) in
             if let result = HttpManager.parseDataResponse(response) {
                 //
                 self?.reloadTableViewData()
