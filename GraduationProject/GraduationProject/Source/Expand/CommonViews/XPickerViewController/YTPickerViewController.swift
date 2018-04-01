@@ -16,6 +16,10 @@ import QMUIKit
     
     @objc optional func pickerViewControllerConfirmButtonDidTouch(bankName: String, bankId: Int)
     
+    @objc optional func timePickerViewControllerConfirmButtonDidTouch(week: String, start: String, end: String)
+    
+    @objc optional func courseYearPickerViewControllerConfirmButtonDidTouch(courseYear: String, courseMonth: String)
+
 }
 
 

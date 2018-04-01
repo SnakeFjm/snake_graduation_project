@@ -73,6 +73,11 @@ class LoginViewController: BaseViewController {
                 let status = result["status"].stringValue
                 if status == "1" {
                     //
+                    if let dict = result.dictionaryObject, let model = UserModel(JSON: dict) {
+                        //
+                        UserManager.shared.saveUserModel(model: model)
+                    }
+                    //
                     self?.loginSuccessfully()
                 } else if status == "0" {
                     showErrorTips("密码不正确")
@@ -86,13 +91,10 @@ class LoginViewController: BaseViewController {
     
     func loginSuccessfully() {
         //
-        let id = self.phoneTextField.text!
-        let password = self.passwordTextField.text!
         let role = self.roleLabel.text!
         //
-        let dict = ["id": id, "password": password, "role": role]
-        if let model = UserModel(JSON: dict) {
-            //
+        if let model = UserManager.shared.userModel {
+            model.role = role
             UserManager.shared.saveUserModel(model: model)
         }
         //

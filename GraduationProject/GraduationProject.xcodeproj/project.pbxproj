@@ -126,6 +126,8 @@
 		F6C215AC205F95EB008B893D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C215A4205F95EB008B893D /* MainViewController.swift */; };
 		F6C215AF205F97A4008B893D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C215AD205F97A4008B893D /* LoginViewController.swift */; };
 		F6C215B0205F97A4008B893D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C215AE205F97A4008B893D /* LoginViewController.xib */; };
+		F6C5D7AE2070C42D0033E671 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D7AD2070C42D0033E671 /* TimePickerViewController.swift */; };
+		F6C5D7B22070C4EA0033E671 /* CourseYearViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D7B12070C4EA0033E671 /* CourseYearViewControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +259,8 @@
 		F6C215A4205F95EB008B893D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F6C215AD205F97A4008B893D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F6C215AE205F97A4008B893D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F6C5D7AD2070C42D0033E671 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
+		F6C5D7B12070C4EA0033E671 /* CourseYearViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseYearViewControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +377,8 @@
 				F61D0581206B445400C64859 /* StudentSignInSituationTableViewCell.xib */,
 				F61D0592206B743700C64859 /* StudentSignInDetailTableViewCell.swift */,
 				F61D0593206B743700C64859 /* StudentSignInDetailTableViewCell.xib */,
+				F6C5D7AD2070C42D0033E671 /* TimePickerViewController.swift */,
+				F6C5D7B12070C4EA0033E671 /* CourseYearViewControllerViewController.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61D0591206B6F2D00C64859 /* TeacherModel.swift in Sources */,
+				F6C5D7AE2070C42D0033E671 /* TimePickerViewController.swift in Sources */,
 				F6C21563205F8FFD008B893D /* YTNibCustomView.swift in Sources */,
 				F6C21569205F8FFD008B893D /* YTPickerViewController.swift in Sources */,
 				F6C21582205F8FFD008B893D /* CustomSegmentView.swift in Sources */,
@@ -914,6 +921,7 @@
 				F6C21578205F8FFD008B893D /* SingleItemTableViewCell.swift in Sources */,
 				F6C214E8205F8BBA008B893D /* AppDelegate.swift in Sources */,
 				F6C21552205F8FFD008B893D /* BaseSettingManager.swift in Sources */,
+				F6C5D7B22070C4EA0033E671 /* CourseYearViewControllerViewController.swift in Sources */,
 				F6C2159A205F94CE008B893D /* AppDelegateExtension.swift in Sources */,
 				F6C2155B205F8FFD008B893D /* NSDateFormatter+Category.m in Sources */,
 			);
