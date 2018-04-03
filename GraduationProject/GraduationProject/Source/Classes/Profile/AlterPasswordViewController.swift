@@ -42,7 +42,7 @@ class AlterPasswordViewController: BaseViewController {
             //
             let apiName = ""
             let parameters: Parameters = ["password": self.newTextField.text!]
-            HttpManager.shared.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
+            HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON(completionHandler: { (response) in
                 if let _ = HttpManager.parseDataResponse(response) {
                     //
                     showSuccessTips("修改成功，请重新登录")

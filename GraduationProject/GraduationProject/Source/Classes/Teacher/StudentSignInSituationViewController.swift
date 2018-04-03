@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class StudentSignInSituationViewController: RefreshTableViewController {
 
@@ -37,8 +39,15 @@ class StudentSignInSituationViewController: RefreshTableViewController {
     
     override func loadDataFromServer() {
         //
-        let apiName = ""
-        
+        let apiName = URLManager.teacher_call_name_count()
+        let parameters: Parameters = ["course_id": ""]
+        //
+        HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { [weak self] (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                //
+                self?.reloadTableViewData()
+            }
+        }
     }
     
     // =================================

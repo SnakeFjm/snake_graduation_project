@@ -293,7 +293,7 @@ class AddTeacherCourseViewController: RefreshTableViewController, YTPickerViewCo
                                     "number": self.infoModel.number,
                                     "week_count": self.infoModel.week_count]
         //
-        HttpManager.shared.postRequest(apiName, parameters: parameter, encoding: JSONEncoding.default).responseJSON { [weak self] (response) in
+        HttpManager.shared.postRequest(apiName, parameters: parameter).responseJSON { [weak self] (response) in
             //
             if let _ = HttpManager.parseDataResponse(response) {
                 //

@@ -92,7 +92,7 @@ class RegisterViewController: BaseViewController {
             parameters.updateValue(code, forKey: "code")
         }
         //
-        HttpManager.shared.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { [weak self] (response) in
+        HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { [weak self] (response) in
             if let result = HttpManager.parseDataResponse(response) {
                 //
                 let status = result["status"].stringValue

@@ -47,7 +47,7 @@ class TeacherViewController: RefreshTableViewController {
         let teacherId = UserManager.shared.userModel.id
         let parameters: Parameters = ["teacher_id": teacherId]
         //
-        HttpManager.shared.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { [weak self] (response) in
+        HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { [weak self] (response) in
             if let result = HttpManager.parseDataResponse(response) {
                 //
                 self?.reloadTableViewData()
