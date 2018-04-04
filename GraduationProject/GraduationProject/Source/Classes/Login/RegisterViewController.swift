@@ -40,7 +40,7 @@ class RegisterViewController: BaseViewController {
     // =================================
     
     @IBAction func chooseRoleButtonDidTouch(_ sender: Any) {
-        let titleArray = ["学生", "老师"]
+        let titleArray = ["学生", "教师"]
         showActionSheet(title: "请选择身份", otherTitles: titleArray) { (_, index) in
             if index == 0 {
                 return
@@ -84,10 +84,12 @@ class RegisterViewController: BaseViewController {
         let name = self.nameTextField.text!
         let college = self.collegeTextField.text!
         let password = self.passwordTextField.text!
+        let role = self.roleLabel.text ?? ""
         var parameters: Parameters = ["id": id,
                                       "name": name,
                                       "college": college,
-                                      "password": password]
+                                      "password": password,
+                                      "role": role]
         if code != "" {
             parameters.updateValue(code, forKey: "code")
         }

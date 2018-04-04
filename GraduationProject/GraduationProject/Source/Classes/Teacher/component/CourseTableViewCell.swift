@@ -16,6 +16,8 @@ class CourseTableViewCell: BaseTableViewCell {
     @IBOutlet weak var courseYearLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var classroomLabel: UILabel!
+    @IBOutlet weak var weekCountLabel: UILabel!
+    @IBOutlet weak var studentNumberLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
