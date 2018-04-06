@@ -286,7 +286,7 @@ class AddTeacherCourseViewController: RefreshTableViewController, YTPickerViewCo
         let apiName = URLManager.teacher_course_add()
         let teacherID = UserManager.shared.userModel.id
         let parameter: Parameters = ["name": self.infoModel.name,
-                                    "teacherID": teacherID,
+                                    "teacher_id": teacherID,
                                     "classroom": self.infoModel.classroom,
                                     "time": self.infoModel.time,
                                     "course_year": self.infoModel.course_year,
@@ -298,6 +298,7 @@ class AddTeacherCourseViewController: RefreshTableViewController, YTPickerViewCo
             if let _ = HttpManager.parseDataResponse(response) {
                 //
                 showSuccessTips("创建成功")
+                self?.back()
             } else {
                 showErrorTips("创建失败")
             }

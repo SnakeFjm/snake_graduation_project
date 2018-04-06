@@ -37,6 +37,14 @@ class CourseYearViewControllerViewController: YTPickerViewController {
 //                break
 //            }
 //        }
+        //
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy"
+        let date = Date.init()
+        let dateString = dateFormatter.string(from: date)
+        let dateInt = Int(dateString)!
+        //
+        self.xpicker.pickerView.selectRow(dateInt - 2000, inComponent: 0, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class StudentSignInSituationViewController: RefreshTableViewController {
 
+    var course_id = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -40,11 +42,12 @@ class StudentSignInSituationViewController: RefreshTableViewController {
     override func loadDataFromServer() {
         //
         let apiName = URLManager.teacher_call_name_count()
-        let parameters: Parameters = ["course_id": ""]
+        let parameters: Parameters = ["course_id": self.course_id]
         //
         HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { [weak self] (response) in
             if let result = HttpManager.parseDataResponse(response) {
                 //
+                self?.dataArray = result.arrayValue
                 self?.reloadTableViewData()
             }
         }
@@ -56,13 +59,19 @@ class StudentSignInSituationViewController: RefreshTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StudentSignInSituationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentSignInSituationTableViewCell", for: indexPath) as! StudentSignInSituationTableViewCell
+        //
+        cell.nameLabel.text = self.dataArray[indexPath.row]["student_name"].stringValue
+        cell.signInCountLabel.text = self.dataArray[indexPath.row]["sum"].stringValue
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
-        self.push(StudentSignInDetailViewController())
+        let vc = StudentSignInDetailViewController()
+        vc.course_id = self.course_id
+        vc.student_id = self.dataArray[indexPath.row]["student_id"].stringValue
+        self.push(vc)
     }
 
 }

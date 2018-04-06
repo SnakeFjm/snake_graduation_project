@@ -78,13 +78,16 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
     
     @IBAction func checkSignInSituationButtonDidTouch(_ sender: Any) {
         //
-        self.push(StudentSignInDetailViewController())
+        let course_id = self.json["id"].stringValue
+        let vc = StudentSignInSituationViewController()
+        vc.course_id = course_id
+        self.push(vc)
     }
     
     @IBAction func classTestButtonDidTouch(_ sender: Any) {
         //
         self.navigationController?.popToRootViewController(animated: false)
-        self.tabBarController?.selectedIndex = 1
+        self.navigationController?.tabBarController?.selectedIndex = 1
     }
     
 
