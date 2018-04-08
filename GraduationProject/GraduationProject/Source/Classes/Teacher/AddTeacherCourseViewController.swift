@@ -295,10 +295,15 @@ class AddTeacherCourseViewController: RefreshTableViewController, YTPickerViewCo
         //
         HttpManager.shared.postRequest(apiName, parameters: parameter).responseJSON { [weak self] (response) in
             //
-            if let _ = HttpManager.parseDataResponse(response) {
+            if let result = HttpManager.parseDataResponse(response) {
                 //
-                showSuccessTips("创建成功")
-                self?.back()
+                let status = result["status"].stringValue
+                if status == "1" {
+                    showSuccessTips("创建成功")
+                    self?.back()
+                } else {
+                    showErrorTips("创建失败")
+                }
             } else {
                 showErrorTips("创建失败")
             }

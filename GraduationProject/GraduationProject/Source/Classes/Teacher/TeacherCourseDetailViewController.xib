@@ -57,6 +57,12 @@
                     <state key="normal" title="查看签到情况">
                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="deviceRGB"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="xCornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="cMasksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="checkSignInSituationButtonDidTouch:" destination="-1" eventType="touchUpInside" id="yi4-Jj-7wW"/>
                     </connections>
@@ -67,6 +73,12 @@
                     <state key="normal" title="课堂测验">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="xCornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="cMasksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="classTestButtonDidTouch:" destination="-1" eventType="touchUpInside" id="TJF-yI-iTY"/>
                     </connections>

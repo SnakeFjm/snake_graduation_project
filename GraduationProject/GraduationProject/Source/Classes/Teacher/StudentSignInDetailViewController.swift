@@ -59,7 +59,9 @@ class StudentSignInDetailViewController: RefreshTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StudentSignInDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StudentSignInDetailTableViewCell", for: indexPath) as! StudentSignInDetailTableViewCell
         
-        cell.dateLabel.text = "时间: " + self.dataArray[indexPath.row]["call_time"].stringValue
+        let dateString = self.dataArray[indexPath.row]["call_time"].stringValue
+        let subDateString = dateString.prefix(upTo: dateString.index(dateString.startIndex, offsetBy: 9)).description
+        cell.dateLabel.text = "时间: " + subDateString
         cell.signInSituationLabel.text = (self.dataArray[indexPath.row]["is_call"].stringValue == "true") ? "是" : "否"
         
         return cell

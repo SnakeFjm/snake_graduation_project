@@ -17,6 +17,7 @@ class TeacherViewController: RefreshTableViewController {
         super.viewDidLoad()
         //
         self.title = "我的班级"
+//        self.isHiddenNavigationBarShadowLine = true
         //
         self.navBarAddRightBarButton(title: "创建班级")
         //

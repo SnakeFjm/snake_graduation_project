@@ -46,6 +46,10 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
     // =================================
     // MARK:
     // =================================
@@ -86,8 +90,10 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
     
     @IBAction func classTestButtonDidTouch(_ sender: Any) {
         //
-        self.navigationController?.popToRootViewController(animated: false)
-        self.navigationController?.tabBarController?.selectedIndex = 1
+//        self.navigationController?.popToRootViewController(animated: false)
+//        let testVC = self.navigationController?.tabBarController?.viewControllers![1]
+//        self.tabBarController?.selectedViewController = testVC!
+        self.tabBarController?.selectedIndex = 1
     }
     
 

@@ -73,5 +73,44 @@ class StudentSignInSituationViewController: RefreshTableViewController {
         vc.student_id = self.dataArray[indexPath.row]["student_id"].stringValue
         self.push(vc)
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction.init(style: UITableViewRowActionStyle.destructive, title: "删除") { (_, _) in
+            showAlertController(title: "是否删除该学生", message: "", cancelTitle: "取消", confirmTitle: "确定", completion: { (_, index) in
+                if index == 1 {
+                    let studentId = self.dataArray[indexPath.row]["student_id"].stringValue
+                    self.deleteStudent(studentId: studentId)
+                }
+            })
+        }
+        
+        return [deleteAction]
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    func deleteStudent(studentId: String) {
+        let apiName = URLManager.teacher_delete_student()
+        let parameters: Parameters = ["student_id": studentId,
+                                      "course_id": self.course_id]
+        //
+        HttpManager.shared.deleteRequest(apiName, parameters: parameters).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                let status = result["status"].intValue
+                if status > 1 {
+                    showSuccessTips("删除成功")
+                    self.loadDataFromServer()
+                } else {
+                    showErrorTips("删除失败")
+                }
+            }
+        }
+    }
 
 }
