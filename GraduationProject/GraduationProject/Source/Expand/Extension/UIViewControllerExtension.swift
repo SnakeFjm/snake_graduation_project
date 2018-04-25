@@ -45,7 +45,35 @@ extension UIViewController {
 }
 
 
-
+extension UIViewController {
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+//    @objc func showSuccessTips(_ tips: String) {
+//        SVProgressHUD.setDefaultMaskType(.none)
+//        SVProgressHUD.setMinimumDismissTimeInterval(2.0)
+//        SVProgressHUD.showSuccess(withStatus: tips)
+//    }
+//    
+//    @objc func showErrorTips(_ tips: String) {
+//        SVProgressHUD.setDefaultMaskType(.none)
+//        SVProgressHUD.setMinimumDismissTimeInterval(2.0)
+//        SVProgressHUD.showError(withStatus: tips)
+//    }
+//    
+//    @objc func showLoadingTips(_ tips: String) {
+//        SVProgressHUD.setDefaultMaskType(.black)
+//        SVProgressHUD.show(withStatus: tips)
+//    }
+    
+    @objc func hideTips() {
+        SVProgressHUD.dismiss()
+    }
+    
+    
+}
 
 // 提示
 extension UIViewController {

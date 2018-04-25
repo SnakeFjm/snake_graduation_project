@@ -12,7 +12,8 @@ import Alamofire
 
 class TeacherCourseDetailViewController: RefreshTableViewController {
     
-    @IBOutlet var footerView: UIView!
+    @IBOutlet var footerView: UIView!   // 115 70
+    @IBOutlet weak var signInCodeLabel: UILabel!
     
     var json: JSON = []
     
@@ -20,6 +21,8 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
         super.viewDidLoad()
         //
         self.title = "班级详情"
+        //
+        self.navBarAddRightBarButton(title: "发起签到")
         //
         self.dataArray = ["课程ID", "课程名", "学年", "上课时间", "上课地点", "学生数", "周数"]
         //
@@ -93,8 +96,43 @@ class TeacherCourseDetailViewController: RefreshTableViewController {
 //        self.navigationController?.popToRootViewController(animated: false)
 //        let testVC = self.navigationController?.tabBarController?.viewControllers![1]
 //        self.tabBarController?.selectedViewController = testVC!
-        self.tabBarController?.selectedIndex = 1
+//        self.tabBarController?.selectedIndex = 1
+        
+        let vc = TeacherExamViewController()
+        vc.course_id = self.json["id"].stringValue
+        self.push(vc)
+        
     }
     
-
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func navBarRightBarButtonDidTouch(_ sender: Any) {
+        //
+        let apiName = URLManager.teacher_call_name()
+        let parameters: Parameters = ["course_id": self.json["id"].stringValue]
+        //
+        HttpManager.shared.postRequest(apiName, parameters: parameters).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response) {
+                let status = result["status"].intValue
+                if status > 0 {
+                    showSuccessTips("发起签到成功")
+                    //
+                    let code = result["randomString"].stringValue
+                    self.updateFooterView(code: code)
+                } else {
+                    showErrorTips("发送签到成功")
+                }
+            }
+        }
+    }
+    
+    func updateFooterView(code: String) {
+        //
+        self.footerView.height = 115
+        self.signInCodeLabel.isHidden = false
+        self.signInCodeLabel.text = "签到码：" + code
+    }
+    
 }

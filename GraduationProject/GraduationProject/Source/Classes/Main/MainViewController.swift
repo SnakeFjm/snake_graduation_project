@@ -15,9 +15,9 @@ class MainViewController: UITabBarController {
     var studentVC: StudentViewController!
     var teacherVC: TeacherViewController!
     
-    var examNavController: UINavigationController!
-    var studentExamVC: StudentExamViewController!
-    var teacherExamVC: TeacherExamViewController!
+//    var examNavController: UINavigationController!
+//    var studentExamVC: StudentExamViewController!
+//    var teacherExamVC: TeacherExamViewController!
     
     var profileNav: UINavigationController!
     
@@ -45,14 +45,14 @@ class MainViewController: UITabBarController {
             self.studentVC = StudentViewController()
             self.studentVC.hidesBottomBarWhenPushed = false
             //
-            self.studentExamVC = StudentExamViewController()
-            self.studentExamVC.hidesBottomBarWhenPushed = false
+//            self.studentExamVC = StudentExamViewController()
+//            self.studentExamVC.hidesBottomBarWhenPushed = false
         } else {    // if role == "教师"
             self.teacherVC = TeacherViewController()
             self.teacherVC.hidesBottomBarWhenPushed = false
             //
-            self.teacherExamVC = TeacherExamViewController()
-            self.teacherExamVC.hidesBottomBarWhenPushed = false
+//            self.teacherExamVC = TeacherExamViewController()
+//            self.teacherExamVC.hidesBottomBarWhenPushed = false
         }
         //
         self.homeNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentVC :self.teacherVC)
@@ -62,11 +62,11 @@ class MainViewController: UITabBarController {
         self.homeNavController.tabBarItem = homeItem
 
         //
-        self.examNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentExamVC :self.teacherExamVC)
-        let examItem = UITabBarItem.init(title: "测验", image: UIImage(named: "exam"), selectedImage: UIImage(named: "exam_selected"))
-        examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)
-        examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBMake(r: 0x1B, g: 0x9D, b: 0xE3)], for: .selected)
-        self.examNavController.tabBarItem = examItem
+//        self.examNavController = UINavigationController.init(rootViewController: (role == "学生") ? self.studentExamVC :self.teacherExamVC)
+//        let examItem = UITabBarItem.init(title: "测验", image: UIImage(named: "exam"), selectedImage: UIImage(named: "exam_selected"))
+//        examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBSameMake(value: 0x66)], for: .normal)
+//        examItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.RGBMake(r: 0x1B, g: 0x9D, b: 0xE3)], for: .selected)
+//        self.examNavController.tabBarItem = examItem
 
         //
         let profileVC = ProfileViewController()
@@ -78,7 +78,8 @@ class MainViewController: UITabBarController {
         profileNav.tabBarItem = profileItem
 
         //
-        self.viewControllers = [homeNavController, examNavController, profileNav]
+        self.viewControllers = [homeNavController, profileNav]
+//        self.viewControllers = [homeNavController, examNavController, profileNav]
     }
 
 

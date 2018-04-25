@@ -56,5 +56,43 @@ extension BaseViewController {
         return image
     }
     
+    // 新增返回按钮 （箭头）
+    @objc func addLeftBackButton() -> UIButton {
+        let btn = UIButton.init(type: .custom)
+        btn.setImage(UIImage(named: "ico_return_nav"), for: .normal)
+        btn.backgroundColor = UIColor.RGBSameMake(value: 0xff, a: 0.3)
+        btn.frame = CGRect(x: 10, y: (isiPhoneX ? 44 : 25), width: 40, height: 40)
+        btn.xCornerRadius = 20
+        btn.cMasksToBounds = true
+        btn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.view.addSubview(btn)
+        //
+        return btn
+    }
+    
+    // 新增关闭按钮（叉）
+    @objc func addLeftCloseButton() {
+        let btn = UIButton.init(type: .custom)
+        btn.setImage(UIImage(named: "ico_quit_nav"), for: .normal)
+        btn.frame = CGRect(x: 10, y: (isiPhoneX ? 44 : 25), width: 40, height: 40)
+        btn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.view.addSubview(btn)
+    }
+    
+    // 白色返回箭头 用于扫码
+    func addLeftWhiteBackButton() {
+        let btn = UIButton.init(type: .custom)
+        btn.setImage(UIImage(named: "scanActivate_return_white"), for: .normal)
+        btn.frame = CGRect(x: 10, y: (isiPhoneX ? 44 : 25), width: 40, height: 40)
+        btn.xCornerRadius = 20
+        btn.cMasksToBounds = true
+        btn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.view.addSubview(btn)
+    }
+    
+    @objc func backToMain() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
 

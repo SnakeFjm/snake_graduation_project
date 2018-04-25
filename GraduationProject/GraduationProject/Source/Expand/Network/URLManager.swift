@@ -112,6 +112,10 @@ class URLManager {
         return apiPath("/teacher/course")
     }
     
+    static func teacher_call_name() -> String {
+        return apiPath("/teacher/call-name")
+    }
+    
     // 老师查看某门课程的学生已签到次数   "/teacher/call_name-count"   post
     static func teacher_call_name_count() -> String {
         return apiPath("/teacher/call_name-count")

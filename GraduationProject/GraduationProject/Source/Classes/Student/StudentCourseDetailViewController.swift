@@ -96,12 +96,18 @@ class StudentCourseDetailViewController: RefreshTableViewController {
     
     @IBAction func SignInButtonDidTouch(_ sender: Any) {
         //
-        self.push(SignInViewController())
+//        self.push(SignInViewController())
+        let vc = ScanCodeViewController()
+        vc.student_id = UserManager.shared.userModel.id
+        vc.course_id = self.course_id
+        self.push(vc)
     }
     
     @IBAction func classTestButtonDidTouch(_ sender: Any) {
         //
-        
+        let vc = StudentExamViewController()
+        vc.course_id = self.course_id
+        self.push(vc)
     }
 
 }
